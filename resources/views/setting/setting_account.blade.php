@@ -1,6 +1,5 @@
 @extends('layouts.mev')
 @section('content')
-
 <div class="col-12 col-md-9 min-vh-100 border-left px-0 overflow-x-hidden-m content-wrapper ">
                     <div class="">
         <div class="row">
@@ -14,8 +13,8 @@
                     </div>
                     <div class="d-block d-md-none mt-3">
                         <div class="ml-3">
-        <h5 class="text-bold mt-0 mt-md-3 mb-0 ">Profile</h5>
-        <h6 class="mt-2 text-muted">Update your bio, cover and avatar</h6>
+        <h5 class="text-bold mt-0 mt-md-3 mb-0 ">Account</h5>
+        <h6 class="mt-2 text-muted">Manage your account settings</h6>
     </div>
                     </div>
                     <hr class="mb-0">
@@ -23,7 +22,7 @@
                         <div class="d-lg-block settings-nav" id="">
     <div class="card-settings border-bottom">
         <div class="list-group list-group-sm list-group-flush">
-                            <a href="{{url('setting')}}" class="active list-group-item list-group-item-action d-flex justify-content-between">
+                            <a href="{{url('setting')}}" class=" list-group-item list-group-item-action d-flex justify-content-between">
                     <div class="d-flex align-items-center">
                         <div class="ion-icon-wrapper mr-3 icon-medium d-flex justify-content-center align-items-center">
             <div class="ion-icon-inner">
@@ -40,7 +39,7 @@
             </div>
                     </div>
                 </a>
-                            <a href="{{url('setting/account')}}" class=" list-group-item list-group-item-action d-flex justify-content-between">
+                            <a href="{{url('setting/account')}}" class="active list-group-item list-group-item-action d-flex justify-content-between">
                     <div class="d-flex align-items-center">
                         <div class="ion-icon-wrapper mr-3 icon-medium d-flex justify-content-center align-items-center">
             <div class="ion-icon-inner">
@@ -183,7 +182,7 @@
                     <div class="setting-menu-mobile d-block d-md-none mt-3">
                         <div class="mt-3 inline-border-tabs text-bold">
     <nav class="nav nav-pills nav-justified mCustomScrollbar _mCS_2 mCS-autoHide mCS_no_scrollbar" style="position: relative; overflow: visible;"><div id="mCSB_2" class="mCustomScrollBox mCS-minimal-dark mCSB_horizontal mCSB_outside" tabindex="0" style="max-height: none;"><div id="mCSB_2_container" class="mCSB_container mCS_x_hidden mCS_no_scrollbar_x" style="position: relative; top: 0px; left: 0px; width: 100%;" dir="ltr">
-                    <a class="nav-item nav-link active" href="{{url('setting')}}">
+                    <a class="nav-item nav-link " href="https://watchmevip.com/my/settings/profile">
                 <div class="d-flex justify-content-center">
                     <div class="ion-icon-wrapper  icon-medium d-flex justify-content-center align-items-center">
             <div class="ion-icon-inner">
@@ -192,7 +191,7 @@
             </div>
                 </div>
             </a>
-                    <a class="nav-item nav-link " href="https://watchmevip.com/my/settings/account">
+                    <a class="nav-item nav-link active" href="https://watchmevip.com/my/settings/account">
                 <div class="d-flex justify-content-center">
                     <div class="ion-icon-wrapper  icon-medium d-flex justify-content-center align-items-center">
             <div class="ion-icon-inner">
@@ -271,125 +270,85 @@
             </div>
             <div class="col-md-8 col-lg-9 mb-5 mb-lg-0 min-vh-100 border-left border-right settings-content mt-1 mt-md-0 pl-md-0 pr-md-0">
                 <div class="ml-3 d-none d-md-block">
-                    <h5 class="text-bold mt-0 mt-md-3 mb-0 ">Profile</h5>
-                    <h6 class="mt-2 text-muted">Update your bio, cover and avatar</h6>
+                    <h5 class="text-bold mt-0 mt-md-3 mb-0 ">Account</h5>
+                    <h6 class="mt-2 text-muted">Manage your account settings</h6>
                 </div>
                 <hr class=" d-none d-md-block">
                 <div class="px-4 px-md-3">
-                <form action="{{url('profile/update/')}}/{{auth()->user()->id}}" method="POST"  >
+                <form action="{{url('profile/update/password')}}/{{auth()->user()->id}}" method="POST"  >
                 {{ csrf_field() }}
-                    <div class="dz-details d-none">
-                        <img data-dz-thumbnail="">
-                    </div>
-                    
-    <div class="mb-4">
-        <div class="">
-            <div class="card profile-cover-bg">
-                <img class="card-img-top centered-and-cropped" src="https://watchmevip.com/img/default-cover.png">
-                <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                    <div class="actions-holder d-none">
-
-                        <div class="d-flex">
-                        <span class="h-pill h-pill-accent pointer-cursor mr-1 upload-button dz-clickable" data-toggle="tooltip" data-placement="top" title="" data-original-title="Upload cover image">
-                             <div class="ion-icon-wrapper  icon-medium d-flex justify-content-center align-items-center">
-            <div class="ion-icon-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M416 64H96a64.07 64.07 0 00-64 64v256a64.07 64.07 0 0064 64h320a64.07 64.07 0 0064-64V128a64.07 64.07 0 00-64-64zm-80 64a48 48 0 11-48 48 48.05 48.05 0 0148-48zM96 416a32 32 0 01-32-32v-67.63l94.84-84.3a48.06 48.06 0 0165.8 1.9l64.95 64.81L172.37 416zm352-32a32 32 0 01-32 32H217.63l121.42-121.42a47.72 47.72 0 0161.64-.16L448 333.84z"></path></svg>
-            </div>
-            </div>
-                        </span>
-                            <span class="h-pill h-pill-accent pointer-cursor" onclick="ProfileSettings.removeUserAsset('cover')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove cover image">
-                            <div class="ion-icon-wrapper  icon-medium d-flex justify-content-center align-items-center">
-            <div class="ion-icon-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M289.94 256l95-95A24 24 0 00351 127l-95 95-95-95a24 24 0 00-34 34l95 95-95 95a24 24 0 1034 34l95-95 95 95a24 24 0 0034-34z"></path></svg>
-            </div>
-            </div>
-                        </span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="container">
-            <div class="card avatar-holder">
-                <img class="card-img-top" src="https://watchmevip.com/img/default-avatar.jpg">
-                <div class="card-img-overlay d-flex justify-content-center align-items-center">
-                    <div class="actions-holder d-none">
-                        <div class="d-flex">
-                        <span class="h-pill h-pill-accent pointer-cursor mr-1 upload-button dz-clickable" data-toggle="tooltip" data-placement="top" title="" data-original-title="Upload avatar">
-                            <div class="ion-icon-wrapper  icon-medium d-flex justify-content-center align-items-center">
-            <div class="ion-icon-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M416 64H96a64.07 64.07 0 00-64 64v256a64.07 64.07 0 0064 64h320a64.07 64.07 0 0064-64V128a64.07 64.07 0 00-64-64zm-80 64a48 48 0 11-48 48 48.05 48.05 0 0148-48zM96 416a32 32 0 01-32-32v-67.63l94.84-84.3a48.06 48.06 0 0165.8 1.9l64.95 64.81L172.37 416zm352-32a32 32 0 01-32 32H217.63l121.42-121.42a47.72 47.72 0 0161.64-.16L448 333.84z"></path></svg>
-            </div>
-            </div>
-                        </span>
-                            <span class="h-pill h-pill-accent pointer-cursor" onclick="ProfileSettings.removeUserAsset('avatar')" data-toggle="tooltip" data-placement="top" title="" data-original-title="Remove avatar">
-                             <div class="ion-icon-wrapper  icon-medium d-flex justify-content-center align-items-center">
-            <div class="ion-icon-inner">
-            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon" viewBox="0 0 512 512"><path d="M289.94 256l95-95A24 24 0 00351 127l-95 95-95-95a24 24 0 00-34 34l95 95-95 95a24 24 0 1034 34l95-95 95 95a24 24 0 0034-34z"></path></svg>
-            </div>
-            </div>
-                        </span>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-        <div class="form-group">
-        <label for="username">Username</label>
-        <input class="form-control " id="username" name="username" aria-describedby="emailHelp" value="{{Auth::user()->name}}" disabled>
-            </div>
-    <div class="form-group">
-        <label for="name">Full name</label>
-        <input class="form-control " id="name" name="name" aria-describedby="emailHelp" value="{{Auth::user()->profile->fullname}}">
-            </div>
-    <div class="form-group">
-        <label for="bio">Bio</label>
-        <textarea class="form-control " id="bio" name="bio" rows="3" value="{{Auth::user()->profile->bio}}" spellcheck="false">{{Auth::user()->profile->bio}}</textarea>
-            </div>
-    <div class="form-group">
-        <label for="birthdate">Birthdate</label>
-        <input type="date" class="form-control " id="location" name="birthdate" aria-describedby="emailHelp" value="{{Auth::user()->profile->dob}}">
-            </div>
-
-    <div class="d-flex flex-row">
-        <div class="w-50 pr-2">
-            <div class="form-group">
-                <label for="gender">Gender</label>
-                <select class="form-control" id="gender" name="gender">
-                    <option value="{{Auth::user()->profile->gender}}">{{Auth::user()->profile->gender}}</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Couple">Couple</option>
-                    <option value="Other">Other</option>
-            </select>
-    </div>
-        </div>
-
-                    <div class="w-50 pl-2">
-                <div class="form-group">
-                    <label for="pronoun">Gender pronoun</label>
-                    <input class="form-control " id="pronoun" name="pronoun" aria-describedby="emailHelp" value="{{Auth::user()->profile->genderPronoun}}">
-                                    </div>
-            </div>
-        
-    </div>
 
     <div class="form-group">
-        <label for="location">Location</label>
-        <input class="form-control " id="location" name="location" aria-describedby="emailHelp" value="{{Auth::user()->profile->location}}">
+        <label for="username">Password</label>
+        <input class="form-control " id="password" name="password" type="password">
+        <p id="p1" class="text-danger"></p>
+
             </div>
 
     <div class="form-group">
-        <label for="website" value="">Website URL</label>
-        <input type="url" class="form-control " id="website" name="website" aria-describedby="emailHelp" value="{{Auth::user()->profile->webUrl}}">
+        <label for="username">New password</label>
+        <input class="form-control " id="new_password" name="new_password" type="password">
+        <p id="p2" class="text-danger"></p>
+
             </div>
-    <button class="btn btn-primary btn-block rounded mr-0" type="submit">Save</button>
+
+    <div class="form-group">
+        <label for="username">Confirm password</label>
+        <input class="form-control " id="confirm_password" name="confirm_password" type="password">
+        <p id="p3" class="text-danger"></p>
+
+            </div>
+    <button class="btn btn-primary btn-block rounded mr-0" id="submitdsa" type="submit">Save</button>
+
 </form>
                 </div>
             </div>
         </div>
     </div>
             </div>
+
+
+            <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+
+
+
+<script>
+    $("#submitdsa").click(function() {
+        var password = $("#password").val();
+        var new_password = $("#new_password").val();
+        var confirm_password = $("#confirm_password").val();
+     
+
+      if(password.length == "")
+          {
+            $("#p1").text("Current password required" );
+            $("#password").focus();
+            return false;
+          }
+          else if(new_password.length == "")
+          {
+            $("#p2").text("New Password");
+            $("#new_password").focus();
+            return false;
+          }
+
+          else if(confirm_password != new_password)
+          {
+            $("#p3").text("Password does not match");
+            $("#confirm_password").focus();
+            return false;
+          }
+
+        else
+          {
+                return true;
+              }
+          
+      });
+
+  
+ 
+
+</script>
 @endsection

@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\ProfileController;
+
 
 
 /*
@@ -44,8 +46,26 @@ Route::get('/profile',[DashboardController::class, 'profile'])->name('profile');
 // setting
 Route::get('/setting',[DashboardController::class, 'setting'])->name('setting');
 
+// setting/account
+Route::get('/setting/account',[DashboardController::class, 'setting_account'])->name('setting_account');
+
 // help
 Route::get('/help',[DashboardController::class, 'help'])->name('help');
+
+
+
+
+
+
+// sign up profuile
+Route::post('/profile',[ProfileController::class, 'profile'])->name('profile');
+// updae profile
+Route::post('/profile/update/{id}',[ProfileController::class, 'ProfileUpdate']);
+// update poassword
+Route::post('/profile/update/password/{id}',[ProfileController::class, 'ProfileUpdatePass']);
+
+
+
 
 
 

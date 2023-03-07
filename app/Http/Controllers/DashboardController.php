@@ -68,5 +68,12 @@ class DashboardController extends Controller
       {
       return view('help.index');
       }
+
+      //setting_account
+      public function setting_account()
+      {
+      return view('setting.setting_account');
+      }
+
  
 }

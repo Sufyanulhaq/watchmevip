@@ -201,3 +201,14 @@ input[type="password"]:focus {
                 color: white !important
 }
 
+.form-control:focus {
+    color: #b1b1b1;
+    background-color: #3b3b3b;
+    border-color: #6c6437 !important;
+    box-shadow: 0 0 0 0.1rem #6c6437 !important;
+}
+.btn-primary:focus {
+   
+    border-color: #6c6437 !important;
+    box-shadow: 0 0 0 0.1rem #6c6437 !important;
+}

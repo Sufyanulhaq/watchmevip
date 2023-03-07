@@ -19,6 +19,7 @@
     <meta name="csrf-token" content="ukJm0v0xFIfnJYSriVUzY1tZCFl3QBVlybHYZxM8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{asset('asset/css/custom.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.css">
 
     <script src="https://watchmevip.com/libs/pusher-js/dist/web/pusher.min.js"></script>
     <link rel="shortcut icon" href="https://watchmevip.com/storage/settings/January2023/2PLDFC2PCrImYFD0eB5i.jpg" type="image/x-icon">
@@ -36,6 +37,18 @@
         .user-side-menu .h-pill:hover {
             background: #6c6437 !important;
                 color: white !important
+        }
+        .toast-success{
+            background: green;
+        }
+        .toast-info{
+            background: blue;
+        }
+        .toast-warning{
+            background: orange;
+        }
+        .toast-error{
+            background: red;
         }
     </style>
 
@@ -787,6 +800,28 @@
     }
     ;
 </script>
-
+  <!-- toaster js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+  <!-- toaster script -->
+  <script>
+    @if(Session::has('message'))
+    var type = "{{ Session ::get('alert_type','danger') }}"
+    switch(type){
+        case 'info':
+        toastr.info("{{ Session ::get('message') }}");
+        break;
+        case 'success':
+        toastr.success("{{ Session ::get('message') }}");
+        break;
+        case 'warning':
+        toastr.warning("{{ Session ::get('message') }}");
+        break;
+        case 'error':
+        toastr.error("{{ Session ::get('message') }}");
+        break;
+    }
+    @endif
+  </script>
+  <!-- toaster script end --> 
 </body>
 </html>
