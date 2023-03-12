@@ -13,7 +13,7 @@
     <div class="row">
         <div class="col-12">
             <video autoplay muted loop id="myVideo">
-                <!-- <source src="{{asset('asset/video/WMVIP.mp4')}}" type="video/mp4"> -->
+                <source src="{{asset('asset/video/WMVIP.mp4')}}" type="video/mp4">
             </video>
 
 

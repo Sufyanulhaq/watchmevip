@@ -32,6 +32,42 @@ main.video-tour-page .auth-form {
     
 }
 
+@media only screen and (max-width: 867px) {
+    .sign-up{
+        height: 500px;
+        width: 60% !important;
+        position: absolute;
+        top: 20%;
+        left: 20%;
+        text-align: center;
+        background: rgba(0,0,0,.33);
+        
+    }
+    .log-in{
+        height: 400px;
+        width: 60% !important;
+        position: absolute;
+        top: 20%;
+        left: 20% !important;
+        text-align: center;
+        background: rgba(0,0,0,.33);
+        
+    }
+
+    .forget{
+        height: 400px;
+        width: 60% !important;
+        position: absolute;
+        top: 20%;
+        left: 20% !important;
+        text-align: center;
+        background: rgba(0,0,0,.33);
+        
+    }
+    
+}
+
+
 .log-in{
     height: 400px;
     width: 40%;
